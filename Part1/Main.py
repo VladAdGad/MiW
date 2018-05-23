@@ -4,7 +4,7 @@ from Cluster import Cluster
 from Iris import Iris
 from Universe import Univervse
 
-irises = pd.read_csv('iris.txt', sep=',', header=None)
+irises = pd.read_csv('../Resources/iris.txt', sep=',', header=None)
 irises.columns = ['x1', 'y1', 'x2', 'y2', 'name']
 
 clusters_names = irises.name.unique()
