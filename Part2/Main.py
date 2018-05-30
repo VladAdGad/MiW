@@ -1,7 +1,6 @@
 import csv
 import math
 import sys
-
 import enum
 
 eps = float(sys.argv[1])
