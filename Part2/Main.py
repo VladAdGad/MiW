@@ -23,6 +23,7 @@ class Iris:
 
     def compare_dist_cluster(self, clusters):
         distances = [self._calc_distance(cluster.cluster) for cluster in clusters]
+        print(distances)
         r_min = min(distances)
         r_q = r_min * eps
         rq_list = [1 for k in self.distances if self.distances[k] <= r_q]
@@ -50,11 +51,6 @@ class Centroid:
     def __init__(self, cluster, category_name):
         self.cluster = cluster
         self.category_name = category_name
-        self.low_nodes = list()
-        self.high_nodes = list()
-
-    def __str__(self):
-        return "{}({}){}".format(self.category_name, len(self.nodes), str(self.centroid))
 
 
 setosa_cluster = Centroid(Iris(5.01, 3.42, 1.46, 0.24), "Iris setosa")
@@ -66,15 +62,13 @@ def read_file(fileTxt):
     with open(fileTxt, "r") as csvfile:
         csv_data = csv.reader(csvfile, delimiter=",")
         for row in csv_data:
-            if not row:
-                continue
             a = float(row[0])
             b = float(row[1])
             c = float(row[2])
             d = float(row[3])
             node = Iris(a, b, c, d)
             node.compare_dist_cluster([setosa_cluster, viriginica_cluster, versicolor_cluster])
-            print(node)
+            # print(node)
 
 
 if __name__ == '__main__':
