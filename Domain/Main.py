@@ -21,7 +21,7 @@ with open("../Resources/iris.txt", "r") as file:
             if min_distance > cur_distance:
                 min_distance = cur_distance
                 target_centroid = centroid
-        target_centroid.approximate(cur_iris.distances, 100)
+        target_centroid.approximate(cur_iris.distances, 1)
 
 for centroid in centroids:
     print(len(centroid.high_approximation))

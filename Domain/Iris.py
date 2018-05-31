@@ -10,7 +10,6 @@ class Iris:
         self.coordinates = coordinates
         self.name = name
 
-    def set_distances(self, l1, l2, l3):
-        self.distances = numpy.append(self.distances, Utility.calc_distance(l1, self.coordinates))
-        self.distances = numpy.append(self.distances, Utility.calc_distance(l2, self.coordinates))
-        self.distances = numpy.append(self.distances, Utility.calc_distance(l3, self.coordinates))
+    def set_distances(self, *list_of_coordinates):
+        for coordinates in list_of_coordinates:
+            self.distances = numpy.append(self.distances, Utility.calc_distance(coordinates, self.coordinates))
