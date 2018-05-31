@@ -26,5 +26,5 @@ with open("../Resources/iris.txt", "r") as file:
         target_centroid.approximate(cur_cluster.distances, epsilon)
 
 for centroid in centroids:
-    print(len(centroid.high_approximation))
-    print(len(centroid.low_approximation))
+    print("High {}".format(len(centroid.high_approximation)))
+    print("Low {}".format(len(centroid.low_approximation)))
