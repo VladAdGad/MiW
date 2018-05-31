@@ -11,11 +11,8 @@ class Centroid:
 
     def approximate(self, distances, epsilon):
         search_dist = min(distances) * epsilon
-        count = 0
-        for dist in distances:
-            if dist <= search_dist:
-                count += 1
-        if count > 1:
+        count = [0 for dist in distances if dist <= search_dist]
+        if len(count) > 1:
             self.high_approximation = numpy.append(self.high_approximation, 1)
         else:
             self.low_approximation = numpy.append(self.low_approximation, 0)
