@@ -3,7 +3,7 @@ import numpy
 from Domain import Utility
 
 
-class Iris:
+class Cluster:
     distances = numpy.array([])
 
     def __init__(self, coordinates, name):
